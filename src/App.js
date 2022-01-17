@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
 
-  const [comentario, setcomentario] = React.useState()
+  const [comentario, setcomentario] = React.useState() 
   const [todososcomentarios, settodososcomentarios] = React.useState([])  
   
 
@@ -15,20 +15,23 @@ function App() {
   
 
   function cliqueinobotao() {
-    if (comentario == null)
+    if (comentario == null)                                           
          window.alert("digite um comentário antes de prosseguir.")
 
     else
-
+                                                                                    /* essa função captura o evento de clique no botão "comentar"
+                                                                                     e gera um alerta caso o valor seja nulo ou atualiza a constante "todososcomentarios"
+                                                                                     com o valor contido no array [todos os comentarios + comentario (atual)] e exibe na lista 
+                                                                                     não ordenada, cada valor como um item */
     {const todososcomentsanteriores = [...todososcomentarios, comentario]
     settodososcomentarios(todososcomentsanteriores)
-    document.getElementById("coment-box").value = "";
+    document.getElementById("coment-box").value = "";        /* Nessa linha, após clicar no botão e realizar as ações acima, eu peço para zerar o valor contido no coment box (valor atual) e com isso, eu limpo o input, após o submit do comentário desejado  */
     setcomentario() }
 }
 
   function zerar() {
     const todososcomentsanteriores = []
-    settodososcomentarios(todososcomentsanteriores)
+    settodososcomentarios(todososcomentsanteriores)   /* essa funçao está encarregada de zerar o array que contém meus comentário anteriores e o comentário atual. */
   }
 
 
